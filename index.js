@@ -13,10 +13,19 @@ var canvas = d3
 
 var circle = canvas //circle
   .append("circle")
-  .attr("cx", 200)
-  .attr("cy", 420)
+  .attr("cx", 0)
+  .attr("cy", 520)
   .attr("r", 50)
   .attr("fill", "blue");
+circle
+  .transition()
+  .duration(1500)
+  .delay(1500)
+  .attr("cx", 300)
+  .each("end", function () {
+    d3.select(this).attr("fill", "red");
+  });
+// circle.transition().duration(3000).delay(3000).attr("cy", 700);
 // var rect = canvas //Rectangle
 //   .append("rect")
 //   .attr("x", 0)
@@ -46,23 +55,23 @@ var line = canvas //Line
 var dataArray = [20, 40, 60, 600];
 var widthScale = d3.scaleLinear().domain([0, 60]).range([0, width]);
 
-var color = d3.scaleLinear().domain([0, 60]).range(["blue", "purple"]);
-var bar = canvas
-  .selectAll("rect")
-  .data(dataArray)
-  .enter()
-  .append("rect")
-  .attr("width", function (d) {
-    return widthScale(d);
-  })
-  .attr("height", 50)
-  .attr("fill", function (d) {
-    return color(d);
-  })
-  .attr("y", function (d, i) {
-    return i * 100;
-  });
+// var color = d3.scaleLinear().domain([0, 60]).range(["blue", "purple"]);
+// var bar = canvas
+//   .selectAll("rect")
+//   .data(dataArray)
+//   .enter()
+//   .append("rect")
+//   .attr("width", function (d) {
+//     return widthScale(d);
+//   })
+//   .attr("height", 50)
+//   .attr("fill", function (d) {
+//     return color(d);
+//   })
+//   .attr("y", function (d, i) {
+//     return i * 100;
+//   });
 
 var axisScale = d3.scaleLinear().domain([0, 100]).range([0, 300]);
-var xAxis = d3.scale().axis().scale(axisScale).ticks(5); // Using d3.svg.axis() instead of d3.axis()
-svg.append("g").attr("transform", "translate(50, 400)").call(xAxis);
+var xAxis = d3.axisTop().scale(axisScale); // Using d3.svg.axis() instead of d3.axis()
+canvas.append("g").attr("transform", "translate(50, 400)").call(xAxis);
