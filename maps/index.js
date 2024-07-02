@@ -7,7 +7,7 @@ var canvas = d3
   .append("g")
   .attr("transform", "translate(" + (svgWidth * 0.1 + 50) + "," + 50 + ")"); // Shifted 10% right
 
-var tree = d3.tree().size([500, 400]);
+var tree = d3.cluster().size([500, 400]);
 
 d3.json("data.json")
   .then(function (data) {
