@@ -1,9 +1,9 @@
 dataSet = [
   { name: "Shanghai", population: 18, rank: 1 },
   { name: "Devashish", population: 11, rank: 10 },
-  { name: "Nititn", population: 8, rank: 20 },
-  { name: "Prathmesh", population: 7, rank: 30 },
-  { name: "Nishchnt", population: 5, rank: 40 },
+  { name: "Nititn", population: 10, rank: 20 },
+  { name: "Prathmesh", population: 8, rank: 30 },
+  { name: "Nishchnt", population: 6, rank: 40 },
   { name: "Peter", population: 4, rank: 50 },
 ];
 
@@ -29,6 +29,7 @@ circles
   .attr("r", function (d, i) {
     return d.population;
   });
+circles.style("fill", "purple");
 
 var circleLabels = svgContainer
   .selectAll("text")
@@ -49,11 +50,11 @@ circleLabels.text(function (d, i) {
   return d.name;
 });
 
-circleLabels.style("fill", "green");
+circleLabels.style("fill", "blue");
 
 // circleLabels.text(function (d, i) {
 //   return d.rank;
 // });
 circleLabels.text(function (d, i) {
-  return "Rank:" + d.rank + d.name;
+  return "Rank:" + d.rank + " " + d.name;
 });
