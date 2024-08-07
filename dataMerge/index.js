@@ -1,11 +1,11 @@
-dataSet = [
-  { name: "Shanghai", population: 18, rank: 1 },
-  { name: "Devashish", population: 11, rank: 10 },
-  { name: "Nititn", population: 10, rank: 20 },
-  { name: "Prathmesh", population: 8, rank: 30 },
-  { name: "Nishchnt", population: 6, rank: 40 },
-  { name: "Peter", population: 4, rank: 50 },
-];
+// dataSet = [
+//   { name: "Shanghai", population: 18, rank: 1 },
+//   { name: "Devashish", population: 11, rank: 10 },
+//   { name: "Nititn", population: 10, rank: 20 },
+//   { name: "Prathmesh", population: 8, rank: 30 },
+//   { name: "Nishchnt", population: 6, rank: 40 },
+//   { name: "Peter", population: 4, rank: 50 },
+// ];
 
 var svgContainer = d3
   .select("body")
